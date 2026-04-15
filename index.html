@@ -1,146 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Shop | Luxury Collection</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+    <title>ShopHub Pro | Premium E-Commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        :root {
-            --bg: #050505;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --accent: #a855f7;
-            --text: #ffffff;
-            --text-dim: #a1a1aa;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
-        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
-
-        /* Smooth Scroll */
-        html { scroll-behavior: smooth; }
-
-        /* Glassmorphism Classes */
-        .glass {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-        }
-
-        /* Navbar */
-        nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh; display: flex; align-items: center; justify-content: center;
-            text-align: center; background: radial-gradient(circle at center, #1e1b4b 0%, #050505 100%);
-            padding: 0 20px;
-        }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -2px; }
-        .hero p { color: var(--text-dim); font-size: 1.2rem; margin-bottom: 2rem; }
-
-        /* Search Bar */
-        .search-container { max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
-        #productSearch {
-            width: 100%; padding: 15px 25px; border-radius: 50px; background: var(--glass);
-            border: 1px solid var(--border); color: white; outline: none; font-size: 1rem;
-        }
-
-        /* Product Grid */
-        .container { max-width: 1200px; margin: 0 auto; padding: 5rem 5%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-
-        .product-card {
-            padding: 1.5rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative; overflow: hidden;
-        }
-        .product-card:hover { transform: translateY(-10px); }
-        .product-card img {
-            width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 15px; margin-bottom: 1rem;
-        }
-        .product-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-        .price { color: var(--accent); font-weight: bold; font-size: 1.2rem; margin-bottom: 1.5rem; }
-
-        /* Buttons */
-        .btn-group { display: flex; gap: 10px; }
-        .btn {
-            flex: 1; padding: 12px; border-radius: 12px; text-align: center;
-            text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
-        }
-        .btn-wa { background: #25d366; color: white; }
-        .btn-upi { background: var(--text); color: black; }
-        .btn:hover { opacity: 0.8; transform: scale(1.02); }
-
-        /* Sections Styling */
-        section h2 { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
-        .how-to-step { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 15px; }
-        .step-num { 
-            background: var(--accent); width: 40px; height: 40px; 
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;
-        }
-
-        /* Fade-in Animation */
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
-            .btn-group { flex-direction: column; }
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .product-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .glass-effect { background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(12px); }
+        /* Custom Scrollbar for Dark Theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111827; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4B5563; }
     </style>
 </head>
-<body>
+<body class="bg-[#0b0f19] text-gray-100 antialiased">
 
-    <nav class="glass">
-        <div style="font-weight: 800; font-size: 1.5rem;">LUXE<span style="color:var(--accent)">SHOP</span></div>
-        <div class="nav-links">
-            <a href="#products" style="color: white; text-decoration: none;">Explore</a>
+    <nav class="glass-effect sticky top-0 z-[100] border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i class="fa-solid fa-bolt text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-black tracking-tighter uppercase italic">Shop<span class="text-blue-500">Hub</span></span>
+                </div>
+
+                <div class="hidden md:flex flex-1 max-w-xl mx-10 relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                    <input type="text" id="mainSearch" 
+                        class="w-full bg-gray-800/50 border border-gray-700 rounded-2xl py-3 pl-12 pr-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none" 
+                        placeholder="Search 1000+ premium products...">
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <button class="relative hover:text-blue-500 transition" onclick="openWishlist()">
+                        <i class="fa-regular fa-heart text-2xl"></i>
+                        <span id="wishlistCount" class="absolute -top-2 -right-2 bg-red-500 text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+                    </button>
+                    <button class="relative hover:text-blue-500 transition" onclick="openCart()">
+                        <i class="fa-solid fa-bag-shopping text-2xl"></i>
+                        <span id="cartCount" class="absolute -top-2 -right-2 bg-blue-600 text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="reveal">
-            <h1>Elevate Your Style.</h1>
-            <p>Curated premium essentials for the modern individual.</p>
-            <a href="#products" class="btn btn-upi" style="padding: 15px 40px;">Shop Now</a>
+    <header class="relative py-12 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
+                Elevate Your Lifestyle.
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Discover a curated collection of high-performance products designed for the modern era.</p>
         </div>
     </header>
 
-    <div class="search-container reveal">
-        <input type="text" id="productSearch" placeholder="Search products...">
+    <section class="max-w-7xl mx-auto px-4 mb-8">
+        <div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar items-center">
+            <button class="cat-btn active bg-blue-600 px-6 py-2 rounded-full whitespace-nowrap" data-category="all">All Products</button>
+            <button class="cat-btn bg-gray-800 hover:bg-gray-700 px-6 py-2 rounded-full whitespace-nowrap transition" data-category="Electronics">Electronics</button>
+            <button class="cat-btn bg-gray-800 hover:bg-gray-700 px-6 py-2 rounded-full whitespace-nowrap transition" data-category="Lifestyle">Lifestyle</button>
+            <button class="cat-btn bg-gray-800 hover:bg-gray-700 px-6 py-2 rounded-full whitespace-nowrap transition" data-category="Accessories">Accessories</button>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div id="productContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="animate-pulse bg-gray-800 h-80 rounded-2xl"></div>
+            <div class="animate-pulse bg-gray-800 h-80 rounded-2xl"></div>
+            <div class="animate-pulse bg-gray-800 h-80 rounded-2xl"></div>
+            <div class="animate-pulse bg-gray-800 h-80 rounded-2xl"></div>
+        </div>
+        
+        <div id="loadMoreTrigger" class="h-20 flex items-center justify-center mt-10">
+            <div class="loading-spinner hidden border-4 border-blue-600 border-t-transparent w-10 h-10 rounded-full animate-spin"></div>
+        </div>
+    </main>
+
+    <div class="fixed bottom-8 right-8 z-[200] flex flex-col gap-4">
+        <a href="https://wa.me/YOUR_NUMBER" target="_blank" 
+           class="bg-[#25D366] text-white p-4 rounded-2xl shadow-[0_10px_40px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
     </div>
 
-    <section id="products" class="container">
-        <h2 class="reveal">Featured Collection</h2>
-        <div class="grid" id="productGrid">
-            </div>
-    </section>
+    <aside id="cartDrawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-gray-900 shadow-2xl z-[300] translate-x-full transition-transform duration-300 border-l border-gray-800">
+        </aside>
 
-    <section class="container glass reveal" style="margin-bottom: 5rem; padding: 3rem;">
-        <h2>How to Order</h2>
-        <div class="how-to-grid">
-            <div class="how-to-step"><div class="step-num">1</div><p>Choose your favorite premium product.</p></div>
-            <div class="how-to-step"><div class="step-num">2</div><p>Click "Order on WhatsApp" to confirm details.</p></div>
-            <div class="how-to-step"><div class="step-num">3</div><p>Pay instantly via UPI or choose COD.</p></div>
-            <div class="how-to-step"><div class="step-num">4</div><p>Sit back! Delivery in 3-7 days.</p></div>
-        </div>
-    </section>
-
-    <footer class="container" style="text-align: center; border-top: 1px solid var(--border);">
-        <p>© 2026 LUXE SHOP. Crafted for excellence.</p>
-        <div style="margin-top: 1rem; font-size: 1.5rem; display: flex; justify-content: center; gap: 20px;">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-whatsapp"></i>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="js/store-engine.js" type="module"></script>
 </body>
 </html>
