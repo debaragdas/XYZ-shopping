@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Midnight Series Watch",
+        "price": "2,499",
+        "description": "Premium matte black finish with sapphire glass.",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80",
+        "category": "Accessories"
+    },
+    {
+        "id": 2,
+        "name": "Cloud Comfort Hoodie",
+        "price": "1,899",
+        "description": "Ultra-soft cotton blend for daily luxury.",
+        "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=500&q=80",
+        "category": "Apparel"
+    },
+    {
+        "id": 3,
+        "name": "Noir Wireless Audio",
+        "price": "4,200",
+        "description": "Active noise cancellation with deep bass.",
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80",
+        "category": "Tech"
+    }
+]
