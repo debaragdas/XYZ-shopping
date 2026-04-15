@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Shop | Luxury Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --accent: #a855f7;
+            --text: #ffffff;
+            --text-dim: #a1a1aa;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Glassmorphism Classes */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; background: radial-gradient(circle at center, #1e1b4b 0%, #050505 100%);
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -2px; }
+        .hero p { color: var(--text-dim); font-size: 1.2rem; margin-bottom: 2rem; }
+
+        /* Search Bar */
+        .search-container { max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+        #productSearch {
+            width: 100%; padding: 15px 25px; border-radius: 50px; background: var(--glass);
+            border: 1px solid var(--border); color: white; outline: none; font-size: 1rem;
+        }
+
+        /* Product Grid */
+        .container { max-width: 1200px; margin: 0 auto; padding: 5rem 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+
+        .product-card {
+            padding: 1.5rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative; overflow: hidden;
+        }
+        .product-card:hover { transform: translateY(-10px); }
+        .product-card img {
+            width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 15px; margin-bottom: 1rem;
+        }
+        .product-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .price { color: var(--accent); font-weight: bold; font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 10px; }
+        .btn {
+            flex: 1; padding: 12px; border-radius: 12px; text-align: center;
+            text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
+        }
+        .btn-wa { background: #25d366; color: white; }
+        .btn-upi { background: var(--text); color: black; }
+        .btn:hover { opacity: 0.8; transform: scale(1.02); }
+
+        /* Sections Styling */
+        section h2 { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
+        .how-to-step { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 15px; }
+        .step-num { 
+            background: var(--accent); width: 40px; height: 40px; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;
+        }
+
+        /* Fade-in Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .btn-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="glass">
+        <div style="font-weight: 800; font-size: 1.5rem;">LUXE<span style="color:var(--accent)">SHOP</span></div>
+        <div class="nav-links">
+            <a href="#products" style="color: white; text-decoration: none;">Explore</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="reveal">
+            <h1>Elevate Your Style.</h1>
+            <p>Curated premium essentials for the modern individual.</p>
+            <a href="#products" class="btn btn-upi" style="padding: 15px 40px;">Shop Now</a>
+        </div>
+    </header>
+
+    <div class="search-container reveal">
+        <input type="text" id="productSearch" placeholder="Search products...">
+    </div>
+
+    <section id="products" class="container">
+        <h2 class="reveal">Featured Collection</h2>
+        <div class="grid" id="productGrid">
+            </div>
+    </section>
+
+    <section class="container glass reveal" style="margin-bottom: 5rem; padding: 3rem;">
+        <h2>How to Order</h2>
+        <div class="how-to-grid">
+            <div class="how-to-step"><div class="step-num">1</div><p>Choose your favorite premium product.</p></div>
+            <div class="how-to-step"><div class="step-num">2</div><p>Click "Order on WhatsApp" to confirm details.</p></div>
+            <div class="how-to-step"><div class="step-num">3</div><p>Pay instantly via UPI or choose COD.</p></div>
+            <div class="how-to-step"><div class="step-num">4</div><p>Sit back! Delivery in 3-7 days.</p></div>
+        </div>
+    </section>
+
+    <footer class="container" style="text-align: center; border-top: 1px solid var(--border);">
+        <p>© 2026 LUXE SHOP. Crafted for excellence.</p>
+        <div style="margin-top: 1rem; font-size: 1.5rem; display: flex; justify-content: center; gap: 20px;">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
