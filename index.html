@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ShopHub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/style.css">
+<title>ShopHub</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- SEO -->
+<meta name="description" content="ShopHub - Buy best products online">
+<meta property="og:title" content="ShopHub Store">
+
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <h1>ShopHub</h1>
-
   <input type="text" id="searchInput" placeholder="Search products...">
-
-  <div class="nav-icons">
+  <div>
     <a href="wishlist.html">❤️</a>
     <a href="cart.html">🛒</a>
   </div>
 </header>
 
-<!-- FILTER -->
-<div class="filters">
-  <select id="categoryFilter">
-    <option value="">All Categories</option>
-  </select>
+<section class="hero">
+  <h1>JUST SHOP IT.</h1>
+  <p>Premium Collection</p>
+</section>
 
-  <select id="sortPrice">
-    <option value="">Sort by Price</option>
-    <option value="low">Low to High</option>
-    <option value="high">High to Low</option>
-  </select>
-</div>
+<h2 style="padding:20px;">Trending</h2>
+<div id="instaFeed" class="insta-feed"></div>
 
-<!-- PRODUCT GRID -->
 <div id="productContainer" class="product-grid"></div>
 
-<!-- LOAD MORE -->
 <button id="loadMoreBtn">Load More</button>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/your-number" class="whatsapp-float">💬</a>
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float">💬</a>
 
 <script src="js/app.js"></script>
 <script src="js/search.js"></script>
