@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b0f19;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: black;
+}
+
+.hero {
+  height: 50vh;
+  background: url('../assets/images/banner.jpg') center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+.product-card {
+  background: #111;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.insta-feed {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.insta-card {
+  min-width: 150px;
+  height: 200px;
+}
+
+.insta-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
