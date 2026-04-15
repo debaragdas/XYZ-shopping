@@ -1,98 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopHub Pro | Premium E-Commerce</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .product-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
-        .glass-effect { background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(12px); }
-        /* Custom Scrollbar for Dark Theme */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #111827; }
-        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #4B5563; }
-    </style>
+  <meta charset="UTF-8">
+  <title>ShopHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-[#0b0f19] text-gray-100 antialiased">
 
-    <nav class="glass-effect sticky top-0 z-[100] border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-2">
-                    <div class="bg-blue-600 p-2 rounded-lg">
-                        <i class="fa-solid fa-bolt text-white text-xl"></i>
-                    </div>
-                    <span class="text-2xl font-black tracking-tighter uppercase italic">Shop<span class="text-blue-500">Hub</span></span>
-                </div>
+<body>
 
-                <div class="hidden md:flex flex-1 max-w-xl mx-10 relative">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
-                    <input type="text" id="mainSearch" 
-                        class="w-full bg-gray-800/50 border border-gray-700 rounded-2xl py-3 pl-12 pr-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none" 
-                        placeholder="Search 1000+ premium products...">
-                </div>
+<!-- HEADER -->
+<header class="header">
+  <h1>ShopHub</h1>
 
-                <div class="flex items-center gap-6">
-                    <button class="relative hover:text-blue-500 transition" onclick="openWishlist()">
-                        <i class="fa-regular fa-heart text-2xl"></i>
-                        <span id="wishlistCount" class="absolute -top-2 -right-2 bg-red-500 text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
-                    </button>
-                    <button class="relative hover:text-blue-500 transition" onclick="openCart()">
-                        <i class="fa-solid fa-bag-shopping text-2xl"></i>
-                        <span id="cartCount" class="absolute -top-2 -right-2 bg-blue-600 text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <input type="text" id="searchInput" placeholder="Search products...">
 
-    <header class="relative py-12 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-                Elevate Your Lifestyle.
-            </h2>
-            <p class="text-gray-400 max-w-2xl mx-auto">Discover a curated collection of high-performance products designed for the modern era.</p>
-        </div>
-    </header>
+  <div class="nav-icons">
+    <a href="wishlist.html">❤️</a>
+    <a href="cart.html">🛒</a>
+  </div>
+</header>
 
-    <section class="max-w-7xl mx-auto px-4 mb-8">
-        <div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar items-center">
-            <button class="cat-btn active bg-blue-600 px-6 py-2 rounded-full whitespace-nowrap" data-category="all">All Products</button>
-            <button class="cat-btn bg-gray-800 hover:bg-gray-700 px-6 py-2 rounded-full whitespace-nowrap transition" data-category="Electronics">Electronics</button>
-            <button class="cat-btn bg-gray-800 hover:bg-gray-700 px-6 py-2 rounded-full whitespace-nowrap transition" data-category="Lifestyle">Lifestyle</button>
-            <button class="cat-btn bg-gray-800 hover:bg-gray-700 px-6 py-2 rounded-full whitespace-nowrap transition" data-category="Accessories">Accessories</button>
-        </div>
-    </section>
+<!-- FILTER -->
+<div class="filters">
+  <select id="categoryFilter">
+    <option value="">All Categories</option>
+  </select>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div id="productContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="animate-pulse bg-gray-800 h-80 rounded-2xl"></div>
-            <div class="animate-pulse bg-gray-800 h-80 rounded-2xl"></div>
-            <div class="animate-pulse bg-gray-800 h-80 rounded-2xl"></div>
-            <div class="animate-pulse bg-gray-800 h-80 rounded-2xl"></div>
-        </div>
-        
-        <div id="loadMoreTrigger" class="h-20 flex items-center justify-center mt-10">
-            <div class="loading-spinner hidden border-4 border-blue-600 border-t-transparent w-10 h-10 rounded-full animate-spin"></div>
-        </div>
-    </main>
+  <select id="sortPrice">
+    <option value="">Sort by Price</option>
+    <option value="low">Low to High</option>
+    <option value="high">High to Low</option>
+  </select>
+</div>
 
-    <div class="fixed bottom-8 right-8 z-[200] flex flex-col gap-4">
-        <a href="https://wa.me/YOUR_NUMBER" target="_blank" 
-           class="bg-[#25D366] text-white p-4 rounded-2xl shadow-[0_10px_40px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all">
-            <i class="fa-brands fa-whatsapp text-3xl"></i>
-        </a>
-    </div>
+<!-- PRODUCT GRID -->
+<div id="productContainer" class="product-grid"></div>
 
-    <aside id="cartDrawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-gray-900 shadow-2xl z-[300] translate-x-full transition-transform duration-300 border-l border-gray-800">
-        </aside>
+<!-- LOAD MORE -->
+<button id="loadMoreBtn">Load More</button>
 
-    <script src="js/store-engine.js" type="module"></script>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/your-number" class="whatsapp-float">💬</a>
+
+<script src="js/app.js"></script>
+<script src="js/search.js"></script>
+
 </body>
 </html>
