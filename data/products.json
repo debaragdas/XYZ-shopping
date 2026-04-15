@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Stylish Shirt",
+    "price": 799,
+    "category": "Clothing",
+    "image": "assets/images/shirt.jpg",
+    "description": "Premium quality shirt"
+  },
+  {
+    "id": 2,
+    "name": "Sneakers",
+    "price": 1499,
+    "category": "Footwear",
+    "image": "assets/images/shoes.jpg",
+    "description": "Comfortable sneakers"
+  }
+]
