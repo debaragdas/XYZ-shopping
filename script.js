@@ -1,5 +1,5 @@
 // Configuration
-const SHOP_PHONE = "911234567890"; // International format without +
+const SHOP_PHONE = "916003312085"; // International format without +
 const SHOP_UPI = "yourname@upi";
 const SHOP_NAME = "Luxe Shop";
 
