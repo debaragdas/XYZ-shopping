@@ -5,14 +5,14 @@
     "price": 799,
     "category": "Clothing",
     "image": "assets/images/shirt.jpg",
-    "description": "Premium quality shirt"
+    "description": "Nice shirt"
   },
   {
     "id": 2,
-    "name": "Sneakers",
+    "name": "Shoes",
     "price": 1499,
     "category": "Footwear",
     "image": "assets/images/shoes.jpg",
-    "description": "Comfortable sneakers"
+    "description": "Comfort shoes"
   }
 ]
