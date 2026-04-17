@@ -1,46 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FashionCart - Professional E-commerce Store for the Latest Trends. Shop quality fashion with fast delivery.">
+    <meta name="keywords" content="fashion, online store, clothing, accessories, premium fashion">
+    <title>FashionCart | Premium E-commerce Experience</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
-<title>ShopHub</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-<!-- SEO -->
-<meta name="description" content="ShopHub - Buy best products online">
-<meta property="og:title" content="ShopHub Store">
-
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "FashionCart",
+      "description": "Premium Fashion E-commerce Store",
+      "image": "https://yourdomain.com/logo.png",
+      "url": "https://yourdomain.com",
+      "telephone": "+123456789",
+      "priceRange": "$$"
+    }
+    </script>
 </head>
-
 <body>
 
-<header class="header">
-  <h1>ShopHub</h1>
-  <input type="text" id="searchInput" placeholder="Search products...">
-  <div>
-    <a href="wishlist.html">❤️</a>
-    <a href="cart.html">🛒</a>
-  </div>
-</header>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">FASHION<span>CART</span></a>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <div class="search-box">
+                    <input type="text" placeholder="Search trends...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<section class="hero">
-  <h1>JUST SHOP IT.</h1>
-  <p>Premium Collection</p>
-</section>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Style</h1>
+            <p>Discover the 2026 Spring/Summer Collection designed for the bold and the beautiful.</p>
+            <a href="#shop" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
 
-<h2 style="padding:20px;">Trending</h2>
-<div id="instaFeed" class="insta-feed"></div>
+    <main class="container" id="shop">
+        <div class="section-title">
+            <h2>Trending Now</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="product-grid" id="product-list">
+            </div>
+    </main>
 
-<div id="productContainer" class="product-grid"></div>
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>FASHIONCART</h3>
+                <p>Bringing global fashion to your doorstep with unmatched quality and style.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FashionCart. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-<button id="loadMoreBtn">Load More</button>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <i class="fas fa-times" onclick="toggleCart()"></i>
+        </div>
+        <div class="cart-items" id="cart-items">
+            </div>
+        <div class="cart-footer">
+            <div class="total">Total: $<span id="cart-total">0.00</span></div>
+            <button class="btn-checkout">Checkout Now</button>
+        </div>
+    </div>
 
-<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float">💬</a>
-
-<script src="js/app.js"></script>
-<script src="js/search.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
