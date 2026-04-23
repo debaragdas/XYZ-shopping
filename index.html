@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official website: Singer, Composer, Lyricist. Explore new music, live tour dates, and exclusive merchandise.">
+    <title>Official Artist Portal | Music, Tour & Store</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">D.DAS <span class="neon-accent">LIVE</span></a>
+            <nav class="desktop-nav">
+                <a href="#music">Music</a>
+                <a href="#tour">Live Dates</a>
+                <a href="#store">Merch Store</a>
+                <a href="#contact">Booking</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="cartIcon" class="icon-btn" aria-label="Open Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cartBadge" class="badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="closeCart" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cartItems" class="cart-items-container">
+            </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Total:</span>
+                <span id="cartTotal">₹0.00</span>
+            </div>
+            <button id="checkoutBtn" class="btn btn-primary neon-btn">Checkout via WhatsApp</button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <section class="hero cinematic-bg">
+        <div class="hero-content">
+            <h2 class="sub-heading editorial-text">Singer • Composition • Lyrics</h2>
+            <h1 class="main-heading neon-brush">Experience the Sound</h1>
+            <p class="hero-desc">Stream the latest releases and secure your tickets for the upcoming acoustic sessions.</p>
+            <div class="hero-buttons">
+                <a href="#music" class="btn btn-primary">Listen Now</a>
+                <a href="#tour" class="btn btn-outline">View Tour Dates</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="music" class="section-padding dark-section">
+        <div class="container split-layout">
+            <div class="image-wrapper 4k-poster-style">
+                <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=800&q=80" alt="Latest Single Cover" class="album-art" loading="lazy">
+            </div>
+            <div class="text-wrapper">
+                <h2 class="section-title">Latest <span class="neon-accent">Release</span></h2>
+                <h3 class="song-title">Acoustic Shadows</h3>
+                <p class="credits">Music Arrangement, Mix & Master included.</p>
+                <div class="streaming-links">
+                    <a href="#" class="stream-btn"><i class="fa-brands fa-spotify"></i> Spotify</a>
+                    <a href="#" class="stream-btn"><i class="fa-brands fa-apple"></i> Apple Music</a>
+                    <a href="#" class="stream-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tour" class="section-padding darker-section">
+        <div class="container">
+            <h2 class="section-title text-center">Upcoming <span class="neon-accent">Live</span> Shows</h2>
+            <div id="tourContainer" class="tour-list">
+                <div class="skeleton-row"></div>
+                <div class="skeleton-row"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="store" class="section-padding dark-section">
+        <div class="container">
+            <h2 class="section-title text-center">Exclusive <span class="neon-accent">Merch</span></h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="apparel">Apparel</button>
+                <button class="filter-btn" data-filter="music">Physical Music</button>
+                <button class="filter-btn" data-filter="accessories">Accessories</button>
+            </div>
+            
+            <div id="productGrid" class="product-grid 3d-card-layout">
+                <div class="product-card skeleton" style="height: 300px;"></div>
+                <div class="product-card skeleton" style="height: 300px;"></div>
+                <div class="product-card skeleton" style="height: 300px;"></div>
+                <div class="product-card skeleton" style="height: 300px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2 class="neon-brush">Bookings & Inquiries</h2>
+                <p>For live concert promotion, professional music production, or editorial photoshoots.</p>
+                <a href="mailto:booking@example.com" class="contact-link">booking@example.com</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Official Artist Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
