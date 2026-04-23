@@ -1,0 +1,72 @@
+{
+  "tours": [
+    {
+      "id": "t1",
+      "date": "MAY 15, 2026",
+      "venue": "Acoustic Sessions Live",
+      "location": "Guwahati",
+      "ticketLink": "#",
+      "soldOut": false
+    },
+    {
+      "id": "t2",
+      "date": "MAY 22, 2026",
+      "venue": "Neon Nights Festival",
+      "location": "Mumbai",
+      "ticketLink": "#",
+      "soldOut": true
+    },
+    {
+      "id": "t3",
+      "date": "JUN 05, 2026",
+      "venue": "The Grand Amphitheatre",
+      "location": "Delhi",
+      "ticketLink": "#",
+      "soldOut": false
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "name": "মিছা হাঁহি - Limited Edition Vinyl",
+      "category": "music",
+      "price": 1499,
+      "image": "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "p2",
+      "name": "লুইতৰে পানী - Collector's CD & Poster",
+      "category": "music",
+      "price": 899,
+      "image": "https://images.unsplash.com/photo-1619983081563-430f63602796?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "p3",
+      "name": "Debarag Das - Official 1/7 Scale PVC Figurine",
+      "category": "accessories",
+      "price": 4500,
+      "image": "https://images.unsplash.com/photo-1608889175123-8ee362201f81?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "p4",
+      "name": "Cinematic Tour Premium Hoodie",
+      "category": "apparel",
+      "price": 1999,
+      "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "p5",
+      "name": "Signature Acoustic Guitar Picks (Set of 5)",
+      "category": "accessories",
+      "price": 350,
+      "image": "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "p6",
+      "name": "Neon Brush Logo Graphic Tee",
+      "category": "apparel",
+      "price": 899,
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
+    }
+  ]
+}
